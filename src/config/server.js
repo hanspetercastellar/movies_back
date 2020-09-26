@@ -22,7 +22,7 @@ app.use(cors())
 async function async() {
     await sequelize.sync({alter: true })
 }
-async()
+//async()
 
 //Static Files
 app.use(express.static("public"));

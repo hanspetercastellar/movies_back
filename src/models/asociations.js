@@ -4,8 +4,8 @@ import {Favoritos} from "./favoritos";
 import {MoviDetail} from "./movi_detail";
 
 
-Movi.belongsToMany(User, {through: 'favoritos'})
-User.belongsToMany(Movi, {through: 'favoritos'})
+Movi.belongsToMany(User, {through: Favoritos})
+User.belongsToMany(Movi, {through: Favoritos})
 
 
 Movi.hasOne(MoviDetail, {foreignKey:"movi_id"})

@@ -1,5 +1,6 @@
 import {Sequelize, DataType, Model, DataTypes} from "sequelize";
 import sequelize from "../config/database";
+import  bcrypt from 'bcryptjs';
 
 export class User extends Model {}
 
@@ -31,3 +32,8 @@ User.init(
     updatedAt: false,
   }
 );
+
+User.prototype.matchPass = async (dbPass, reqPass) => {
+    const isMatch = await bcrypt.compare(dbPass, reqPass);
+    return isMatch
+}

@@ -20,6 +20,9 @@ export class UserController {
       res.status(500).json({success: false, message: "error", error: err});
     }
   }
+  async login(res, req){
+
+  }
   async encryPassword(password) {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);

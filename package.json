@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js --exec babel-node",
-    "build": "babel src --aut-dir dist",
+    "build": "babel src --out-dir dist",
     "start": "node dist/index.js"
   },
   "author": "Hans Castellar",

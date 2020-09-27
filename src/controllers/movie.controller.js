@@ -9,6 +9,7 @@ import {MoviDetail} from "../models/movi_detail";
 import {Favoritos} from "../models/favoritos";
 import {response} from "express";
 import sequelize from "../config/database";
+import {Op} from "sequelize";
 export class MovieController {
     async list(req, res) {
         try {
@@ -21,31 +22,32 @@ export class MovieController {
 
     //Detalle de una pelicula
     async detail(req, res) {
-        const {movie_id} = req.body;
-        const query = await MoviDetail.findByPk(movie_id);
-        const detail = await query.getMoviDetail();
+        const {id_movie} = req.body;
+        console.log(id_movie)
+        const query = await MoviDetail.findOne({where:{movi_id: 1}})
         if (query === null) {
             res.status(200).json({success: true, message: "nada para listar", data: null});
         } else {
-            response
+            res
                 .status(200)
-                .json({success: true, message: "recurso encontrado", data: detail});
+                .json({success: true, message: "recurso encontrado", data: query});
         }
     }
 
     //buscar Por nombre: retorna una lista de peliculas
     async listByName(req, res) {
-        const {nombre} = req.body;
+        const {title_movie} = req.body;
         const query = await Movi.findAll({
             where: {
                 nombre: {
-                    [Op.substring]: nombre,
+                    [Op.substring]: title_movie,
                 },
             },
+            include: MoviDetail
         });
 
         if (query === null) {
-            res.status(200).json({success: true, message: "nada para listar", data: null});
+            res.status(200).json({success: false, message: "nada para listar", data: null});
         } else {
             res.status(200).json({success: true, message: "listado", data: query});
         }
@@ -53,8 +55,10 @@ export class MovieController {
 
     //Agregar peliculas a favoritos
     async addToFavorite(req, res) {
+        console.log(req.body)
         const {id_movie, id_user} = req.body;
         try{
+
             const query = await Favoritos.create({
                 movi_id: id_movie,
                 user_id: id_user,
@@ -72,17 +76,19 @@ export class MovieController {
     }
 
     async listFavorite(req, res) {
-        //const {id_user} = req.body;
+        const {id_user} = req.body;
         try {
-            const sql = `select mv.id_movi id, mv.nombre as titulo, mv.imagen imagen
+            const sql = `select mv.id_movi id_movi,mv.duracion duracion, mv.nombre as nombre, mv.imagen imagen
                                 from favoritos as fv
                                          join movi mv on fv.movi_id = mv.id_movi
-                                where fv.user_id = 1`;
+                                where fv.user_id = ${id_user}`;
            const query = await sequelize.query(sql);
+            console.log(query)
+            console.log(id_user)
             res.status(200).json({success:true, data:query, message:'lista'})
         } catch (err) {
             res.status(500).json({success: false, error: err})
         }
-
     }
+
 }

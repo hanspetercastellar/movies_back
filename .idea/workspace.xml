@@ -11,23 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812c8fa6-48de-4add-a44e-1690ee075bc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.sequelizerc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/middelwares.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/middelwares.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/movie.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/movie.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/asociations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/asociations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +62,9 @@
       <workItem from="1600923630300" duration="8200000" />
       <workItem from="1600957920635" duration="987000" />
       <workItem from="1600959033824" duration="19604000" />
-      <workItem from="1601087830554" duration="591000" />
+      <workItem from="1601087830554" duration="1697000" />
+      <workItem from="1601090658908" duration="4459000" />
+      <workItem from="1601147522948" duration="25843000" />
     </task>
     <servers />
   </component>
@@ -107,6 +96,10 @@
       <screen x="-1600" y="-142" width="1600" height="870" />
     </state>
     <state x="-1447" y="-63" key="SettingsEditor/0.0.1366.738/-1600.-142.1600.870@-1600.-142.1600.870" timestamp="1600958958697" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601236210053">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/-1600.-142.1600.870@0.0.1366.738" timestamp="1601236210053" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

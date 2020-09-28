@@ -15,11 +15,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var router = _express["default"].Router();
 
-var movieC = new _movie.MovieController();
-router.get("/list", movieC.list);
-router.post("/detail", movieC.detail);
-router.post("/search", movieC.listByName);
-router.post("/favorites/lists", movieC.listFavorite);
-router.post("/favorites/store", _middelwares["default"].verifyBeforeAddToFavorites, movieC.addToFavorite);
+router.get("/list", _movie.MovieController.list);
+router.post("/detail", _movie.MovieController.detail);
+router.post("/search", _movie.MovieController.listByName);
+router.post("/favorites/lists", _movie.MovieController.listFavorite);
+router.post("/favorites/store", _middelwares["default"].verifyBeforeAddToFavorites, _movie.MovieController.addToFavorite);
 var _default = router;
 exports["default"] = _default;

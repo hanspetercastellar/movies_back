@@ -11,17 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812c8fa6-48de-4add-a44e-1690ee075bc3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/config/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/config/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controllers/middelwares.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controllers/middelwares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controllers/movie.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controllers/movie.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/api/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/api/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/api/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routes/api/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/seeders/20200924150849-userSeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/seeders/20200924150849-userSeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/movie.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/movie.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,7 @@
       <workItem from="1600959033824" duration="19604000" />
       <workItem from="1601087830554" duration="1697000" />
       <workItem from="1601090658908" duration="4459000" />
-      <workItem from="1601147522948" duration="33404000" />
+      <workItem from="1601147522948" duration="34277000" />
     </task>
     <servers />
   </component>

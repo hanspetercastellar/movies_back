@@ -20,7 +20,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var middelwares = {
   //comprobar si un usuario ya se encuentra registrado
   userExist: function () {
-    var _userExist = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res, next) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res, next) {
       var result;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -53,11 +53,9 @@ var middelwares = {
       }, _callee);
     }));
 
-    function userExist(_x, _x2, _x3) {
-      return _userExist.apply(this, arguments);
-    }
-
-    return userExist;
+    return function userExist(_x, _x2, _x3) {
+      return _ref.apply(this, arguments);
+    };
   }(),
   verifyBeforeAddToFavorites: function verifyBeforeAddToFavorites(req, res, next) {
     var _req$body = req.body,

@@ -15,119 +15,97 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var UserController = {
+  store: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res) {
+      var _req$body, nickname, email, password, salt, pass, createUser;
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _req$body = req.body, nickname = _req$body.nickname, email = _req$body.email, password = _req$body.password;
+              _context.prev = 1;
+              _context.next = 4;
+              return _bcryptjs["default"].genSalt(10);
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+            case 4:
+              salt = _context.sent;
+              _context.next = 7;
+              return _bcryptjs["default"].hash(password, salt);
 
-var UserController = /*#__PURE__*/function () {
-  function UserController() {
-    _classCallCheck(this, UserController);
-  }
+            case 7:
+              pass = _context.sent;
+              _context.next = 10;
+              return _user.User.create({
+                nickname: nickname,
+                email: email,
+                password: pass
+              });
 
-  _createClass(UserController, [{
-    key: "store",
-    value: function () {
-      var _store = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res) {
-        var _req$body, nickname, email, password, salt, pass, createUser;
+            case 10:
+              createUser = _context.sent;
+              _context.next = 13;
+              return console.log(createUser);
 
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _req$body = req.body, nickname = _req$body.nickname, email = _req$body.email, password = _req$body.password;
-                _context.prev = 1;
-                _context.next = 4;
-                return _bcryptjs["default"].genSalt(10);
+            case 13:
+              res.status(200).json({
+                success: true,
+                message: "Usuario creado"
+              });
+              _context.next = 19;
+              break;
 
-              case 4:
-                salt = _context.sent;
-                _context.next = 7;
-                return _bcryptjs["default"].hash(password, salt);
+            case 16:
+              _context.prev = 16;
+              _context.t0 = _context["catch"](1);
+              res.status(500).json({
+                success: false,
+                message: "error",
+                error: _context.t0
+              });
 
-              case 7:
-                pass = _context.sent;
-                _context.next = 10;
-                return _user.User.create({
-                  nickname: nickname,
-                  email: email,
-                  password: pass
-                });
-
-              case 10:
-                createUser = _context.sent;
-                _context.next = 13;
-                return console.log(createUser);
-
-              case 13:
-                res.status(200).json({
-                  success: true,
-                  message: "Usuario creado"
-                });
-                _context.next = 19;
-                break;
-
-              case 16:
-                _context.prev = 16;
-                _context.t0 = _context["catch"](1);
-                res.status(500).json({
-                  success: false,
-                  message: "error",
-                  error: _context.t0
-                });
-
-              case 19:
-              case "end":
-                return _context.stop();
-            }
+            case 19:
+            case "end":
+              return _context.stop();
           }
-        }, _callee, null, [[1, 16]]);
-      }));
+        }
+      }, _callee, null, [[1, 16]]);
+    }));
 
-      function store(_x, _x2) {
-        return _store.apply(this, arguments);
-      }
+    return function store(_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  }(),
+  encryPassword: function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(password) {
+      var salt;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return _bcryptjs["default"].genSalt(10);
 
-      return store;
-    }()
-  }, {
-    key: "encryPassword",
-    value: function () {
-      var _encryPassword = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(password) {
-        var salt;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return _bcryptjs["default"].genSalt(10);
+            case 2:
+              salt = _context2.sent;
+              _context2.next = 5;
+              return _bcryptjs["default"].hash(password, salt);
 
-              case 2:
-                salt = _context2.sent;
-                _context2.next = 5;
-                return _bcryptjs["default"].hash(password, salt);
+            case 5:
+              return _context2.abrupt("return", _context2.sent);
 
-              case 5:
-                return _context2.abrupt("return", _context2.sent);
-
-              case 6:
-              case "end":
-                return _context2.stop();
-            }
+            case 6:
+            case "end":
+              return _context2.stop();
           }
-        }, _callee2);
-      }));
+        }
+      }, _callee2);
+    }));
 
-      function encryPassword(_x3) {
-        return _encryPassword.apply(this, arguments);
-      }
-
-      return encryPassword;
-    }()
-  }]);
-
-  return UserController;
-}();
-
+    return function encryPassword(_x3) {
+      return _ref2.apply(this, arguments);
+    };
+  }()
+};
 exports.UserController = UserController;

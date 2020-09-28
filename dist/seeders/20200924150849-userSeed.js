@@ -8,7 +8,7 @@ var bcrypt = require("bcryptjs");
 
 module.exports = {
   up: function () {
-    var _up = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(queryInterface, Sequelize) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(queryInterface, Sequelize) {
       var salt, pass;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -43,14 +43,12 @@ module.exports = {
       }, _callee);
     }));
 
-    function up(_x, _x2) {
-      return _up.apply(this, arguments);
-    }
-
-    return up;
+    return function up(_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
   }(),
   down: function () {
-    var _down = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(queryInterface, Sequelize) {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(queryInterface, Sequelize) {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -66,10 +64,8 @@ module.exports = {
       }, _callee2);
     }));
 
-    function down(_x3, _x4) {
-      return _down.apply(this, arguments);
-    }
-
-    return down;
+    return function down(_x3, _x4) {
+      return _ref2.apply(this, arguments);
+    };
   }()
 };

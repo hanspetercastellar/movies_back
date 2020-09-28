@@ -1,6 +1,8 @@
-import {Sequelize, DataType, Model, DataTypes} from "sequelize";
-import sequelize from "../config/database";
 import  bcrypt from 'bcryptjs';
+import sequel from "../config/database";
+import {Sequelize, DataType, Model, DataTypes} from "sequelize";
+
+
 
 export class User extends Model {}
 
@@ -26,7 +28,7 @@ User.init(
     },
   },
   {
-    sequelize,
+    sequel,
     tableName: "user",
     createdAt: false,
     updatedAt: false,

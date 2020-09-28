@@ -31,7 +31,7 @@ Favoritos.init(
     },
   },
   {
-    sequelize,
+      sequelize: sequelize,
     tableName: "favoritos",
     timestamps: false,
   }

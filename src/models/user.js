@@ -1,7 +1,7 @@
 import  bcrypt from 'bcryptjs';
 import sequel from "../config/database";
 import {Sequelize, DataType, Model, DataTypes} from "sequelize";
-
+import sequelize from "../config/database";
 
 
 
@@ -29,7 +29,7 @@ User.init(
     },
   },
   {
-    sequelize:sequel,
+      sequelize: sequelize,
     tableName: "user",
     createdAt: false,
     updatedAt: false,

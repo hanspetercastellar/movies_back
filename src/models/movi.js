@@ -26,7 +26,7 @@ Movi.init(
     },
   },
   {
-    sequelize,
+      sequelize: sequelize,
     tableName: "movi",
     timestamps: false,
   }

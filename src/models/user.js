@@ -4,6 +4,7 @@ import {Sequelize, DataType, Model, DataTypes} from "sequelize";
 
 
 
+
 export class User extends Model {}
 
 User.init(
@@ -28,7 +29,7 @@ User.init(
     },
   },
   {
-    sequel,
+    sequelize:sequel,
     tableName: "user",
     createdAt: false,
     updatedAt: false,

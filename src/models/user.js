@@ -34,6 +34,3 @@ User.init(
   }
 );
 
-User.prototype.matchPass = function* (dbPass, reqPass){
-    return yield bcrypt.compare(dbPass, reqPass)
-}

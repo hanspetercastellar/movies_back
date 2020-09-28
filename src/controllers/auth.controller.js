@@ -14,7 +14,7 @@ console.log(req.body)
         console.log(exists)
         if (exists) {
             let user = await User.findByPk(exists.id_usuario);
-            const isMatch = user.matchPass(user.getDataValue('password'),user_password);
+            const isMatch = this.matchPass(user.getDataValue('password'),user_password);
             if(isMatch){
                 const token = jwt.sign({id: user._id}, 'secret', {
                     expiresIn: 60 * 60 * 24,
@@ -31,4 +31,7 @@ console.log(req.body)
         }
 
     }
+    async matchPass(dbPass, reqPass){
+    return await bcrypt.compare(dbPass, reqPass)
+}
 }

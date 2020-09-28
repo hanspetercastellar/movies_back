@@ -1,10 +1,10 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 var _server = _interopRequireDefault(require("./config/server"));
 
 var _routes = _interopRequireDefault(require("./routes/routes"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /*
 @author: Hans Castellar

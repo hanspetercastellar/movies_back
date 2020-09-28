@@ -10,18 +10,18 @@ import {Favoritos} from "../models/favoritos";
 import {response} from "express";
 import sequelize from "../config/database";
 import {Op} from "sequelize";
-export class MovieController {
-    async list(req, res) {
+export const MovieController = {
+    list: async(req, res) => {
         try {
             const data = await Movi.findAll({include: MoviDetail})
             res.status(200).json({success: true, data, message: "listado"})
         } catch (err) {
             res.status(500).json({success: false, data: null, message: "listado", error: err})
         }
-    }
+    },
 
     //Detalle de una pelicula
-    async detail(req, res) {
+    detail: async(req, res) => {
         const {id_movie} = req.body;
         console.log(id_movie)
         const query = await MoviDetail.findOne({where:{movi_id: 1}})
@@ -32,10 +32,10 @@ export class MovieController {
                 .status(200)
                 .json({success: true, message: "recurso encontrado", data: query});
         }
-    }
+    },
 
     //buscar Por nombre: retorna una lista de peliculas
-    async listByName(req, res) {
+     listByName: async (req, res) => {
         const {title_movie} = req.body;
         const query = await Movi.findAll({
             where: {
@@ -51,10 +51,10 @@ export class MovieController {
         } else {
             res.status(200).json({success: true, message: "listado", data: query});
         }
-    }
+    },
 
     //Agregar peliculas a favoritos
-    async addToFavorite(req, res) {
+    addToFavorite: async (req, res) => {
         console.log(req.body)
         const {id_movie, id_user} = req.body;
         try{
@@ -73,9 +73,9 @@ export class MovieController {
             res.status(500).json({success:true, status:500, message:'Añadido a Favoritos'})
         }
 
-    }
+    },
 
-    async listFavorite(req, res) {
+     listFavorite: async (req, res) => {
         const {id_user} = req.body;
         try {
             const sql = `select mv.id_movi id_movi,mv.duracion duracion, mv.nombre as nombre, mv.imagen imagen

@@ -92,13 +92,26 @@ var UserController = /*#__PURE__*/function () {
       return store;
     }()
   }, {
-    key: "login",
+    key: "encryPassword",
     value: function () {
-      var _login = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(res, req) {
+      var _encryPassword = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(password) {
+        var salt;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _context2.next = 2;
+                return _bcryptjs["default"].genSalt(10);
+
+              case 2:
+                salt = _context2.sent;
+                _context2.next = 5;
+                return _bcryptjs["default"].hash(password, salt);
+
+              case 5:
+                return _context2.abrupt("return", _context2.sent);
+
+              case 6:
               case "end":
                 return _context2.stop();
             }
@@ -106,41 +119,7 @@ var UserController = /*#__PURE__*/function () {
         }, _callee2);
       }));
 
-      function login(_x3, _x4) {
-        return _login.apply(this, arguments);
-      }
-
-      return login;
-    }()
-  }, {
-    key: "encryPassword",
-    value: function () {
-      var _encryPassword = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(password) {
-        var salt;
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return _bcryptjs["default"].genSalt(10);
-
-              case 2:
-                salt = _context3.sent;
-                _context3.next = 5;
-                return _bcryptjs["default"].hash(password, salt);
-
-              case 5:
-                return _context3.abrupt("return", _context3.sent);
-
-              case 6:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }));
-
-      function encryPassword(_x5) {
+      function encryPassword(_x3) {
         return _encryPassword.apply(this, arguments);
       }
 

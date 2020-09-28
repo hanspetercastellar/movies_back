@@ -1,8 +1,8 @@
 import {User} from "../models/user";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken'
-export class AuthController {
-    async login(req, res) {
+export const AuthController = {
+     login: async (req, res) => {
         const {user_email, user_password} = req.body;
 console.log(req.body)
         const exists = await User.findOne({
@@ -14,7 +14,7 @@ console.log(req.body)
         console.log(exists)
         if (exists) {
             let user = await User.findByPk(exists.id_usuario);
-            const isMatch = this.matchPass(user.getDataValue('password'),user_password);
+            const isMatch = AuthController.matchPass(user.getDataValue('password'),user_password);
             if(isMatch){
                 const token = jwt.sign({id: user._id}, 'secret', {
                     expiresIn: 60 * 60 * 24,
@@ -30,8 +30,8 @@ console.log(req.body)
 
         }
 
-    }
-    async matchPass(dbPass, reqPass){
+    },
+     matchPass: async (dbPass, reqPass) => {
     return await bcrypt.compare(dbPass, reqPass)
 }
 }

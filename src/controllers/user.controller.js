@@ -2,8 +2,8 @@ import "../models/user";
 import bcrypt from "bcryptjs";
 import {User} from "../models/user";
 
-export class UserController {
-  async store(req, res) {
+export const UserController = {
+  store: async (req, res) => {
     const {nickname, email, password} = req.body;
     try {
       //encripto la contraseña con HASH usando bcrypt
@@ -19,11 +19,8 @@ export class UserController {
     } catch (err) {
       res.status(500).json({success: false, message: "error", error: err});
     }
-  }
-  async login(res, req){
-
-  }
-  async encryPassword(password) {
+  },
+   encryPassword: async (password) => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
   }

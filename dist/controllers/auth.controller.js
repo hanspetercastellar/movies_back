@@ -62,7 +62,7 @@ var AuthController = /*#__PURE__*/function () {
 
               case 9:
                 user = _context.sent;
-                isMatch = user.matchPass(user.getDataValue('password'), user_password);
+                isMatch = this.matchPass(user.getDataValue('password'), user_password);
 
                 if (isMatch) {
                   token = _jsonwebtoken["default"].sign({
@@ -96,7 +96,7 @@ var AuthController = /*#__PURE__*/function () {
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function login(_x, _x2) {
@@ -104,6 +104,34 @@ var AuthController = /*#__PURE__*/function () {
       }
 
       return login;
+    }()
+  }, {
+    key: "matchPass",
+    value: function () {
+      var _matchPass = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(dbPass, reqPass) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _bcryptjs["default"].compare(dbPass, reqPass);
+
+              case 2:
+                return _context2.abrupt("return", _context2.sent);
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function matchPass(_x3, _x4) {
+        return _matchPass.apply(this, arguments);
+      }
+
+      return matchPass;
     }()
   }]);
 

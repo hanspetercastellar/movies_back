@@ -1,8 +1,6 @@
-import  bcrypt from 'bcryptjs';
-import sequel from "../config/database";
-import {Sequelize, DataType, Model, DataTypes} from "sequelize";
+import bcrypt from 'bcryptjs';
 import sequelize from "../config/database";
-
+import {DataTypes, Model} from "sequelize";
 
 
 export class User extends Model {}
@@ -36,7 +34,6 @@ User.init(
   }
 );
 
-User.prototype.matchPass = async (dbPass, reqPass) => {
-    const isMatch = await bcrypt.compare(dbPass, reqPass);
-    return isMatch
+User.prototype.matchPass = function* (dbPass, reqPass){
+    return yield bcrypt.compare(dbPass, reqPass)
 }

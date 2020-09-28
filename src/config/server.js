@@ -18,12 +18,6 @@ app.use(express.json());
 //Log de rquest en consola
 app.use(morgan("dev"));
 app.use(cors())
-
-async function async() {
-    await sequelize.sync({alter: true })
-}
-//async()
-
 //Static Files
 app.use(express.static("public"));
 
